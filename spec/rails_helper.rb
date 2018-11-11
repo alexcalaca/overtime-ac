@@ -4,7 +4,12 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
+
+include Warden::Test::Helpers
+Warden.test_mode!
+
 ActiveRecord::Migration.maintain_test_schema!
+
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
