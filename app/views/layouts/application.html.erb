@@ -11,10 +11,12 @@
   <div class="container">
   	<div class="row">
   		<div class="col-md-12">
+  		  
   		  <%= render 'shared/nav' %>
 		    <%= yield %>
     	</div>
     </div>
   </div>
+  <%= js add_gritter(flash[:notice], title: "AC Alexandre Calaça", sticky: false, image: :notice, time: 6500) %>
 </body>
 </html>
